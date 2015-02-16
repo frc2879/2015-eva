@@ -15,7 +15,7 @@ local.properties
 .loadpath
 
 # Eclipse Core
-.project
+#.project          we should include this so the project is able to be imported in eclipse.
 
 # External tool builders
 .externalToolBuilders/
