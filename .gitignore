@@ -27,7 +27,7 @@ local.properties
 .cproject
 
 # JDT-specific (Eclipse Java Development Tools)
-.classpath
+#.classpath   including for better eclipse import.
 
 # PDT-specific
 .buildpath
