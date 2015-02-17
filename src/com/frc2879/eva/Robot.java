@@ -2,10 +2,13 @@
 package com.frc2879.eva;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
 import com.frc2879.eva.commands.ExampleCommand;
+import com.frc2879.eva.subsystems.DriveTrain;
 import com.frc2879.eva.subsystems.ExampleSubsystem;
 
 /**
@@ -18,11 +21,17 @@ import com.frc2879.eva.subsystems.ExampleSubsystem;
 public class Robot extends IterativeRobot {
 	
 	public static final String name = "Eva";
-    public static final String version = "C.2015.001";
+    public static final String version = "C.2015.002";
     public static final String fullname = name + " " + version;
 	
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	
+	
+	public static final PowerDistributionPanel pdBoard = new PowerDistributionPanel();
+	
+	public static final DriveTrain drivetrain = new DriveTrain();
+	
 	public static OI oi;
 
     Command autonomousCommand;
