@@ -7,9 +7,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import com.frc2879.eva.commands.ExampleCommand;
-import com.frc2879.eva.subsystems.DriveTrain;
-import com.frc2879.eva.subsystems.ExampleSubsystem;
+import com.frc2879.eva.commands.*;
+import com.frc2879.eva.subsystems.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -31,6 +30,8 @@ public class Robot extends IterativeRobot {
 	public static final PowerDistributionPanel pdBoard = new PowerDistributionPanel();
 	
 	public static final DriveTrain drivetrain = new DriveTrain();
+	public static final Lift lift = new Lift();
+	public static final Arms arms = new Arms();
 	
 	public static OI oi;
 

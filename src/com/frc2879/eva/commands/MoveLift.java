@@ -1,4 +1,4 @@
-package com.frc2879.eva.commands.drive;
+package com.frc2879.eva.commands;
 
 import com.frc2879.eva.Robot;
 
@@ -7,12 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ArcadeDrive extends Command {
+public class MoveLift extends Command {
 
-    public ArcadeDrive() {
+    public MoveLift() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.drivetrain);
+    	requires(Robot.lift);
     	
     }
 
@@ -22,7 +22,6 @@ public class ArcadeDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivetrain.arcadeDrive(Robot.oi.getDriveJoystick(), false);
     }
 
     // Make this return true when this Command no longer needs to run execute()
