@@ -22,7 +22,9 @@ public class ArcadeDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivetrain.arcadeDrive(Robot.oi.getDriveJoystick(), false);
+    	//TODO test this thing
+    	//Robot.drivetrain.arcadeDrive(Robot.oi.getDriveJoystick(), false);
+    	Robot.drivetrain.getRobotDrive().arcadeDrive(Robot.oi.getDriveJoystick(), false);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,10 +34,12 @@ public class ArcadeDrive extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.drivetrain.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }

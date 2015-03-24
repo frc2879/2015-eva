@@ -6,7 +6,6 @@ import com.frc2879.eva.commands.ArcadeDrive;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -31,9 +30,21 @@ public class DriveTrain extends Subsystem {
 		robotDrive = new RobotDrive(leftTalon, rightTalon);
 	}
 	
+	public RobotDrive getRobotDrive() {
+		return this.robotDrive;
+	}
+	
 	public void arcadeDrive(Joystick stick, boolean squaredInputs) {
 		robotDrive.arcadeDrive(stick, squaredInputs);
 	}
+	public void arcadeDrive(Joystick moveStick, int moveAxis, Joystick rotateStick, int rotateAxis, boolean squaredInputs) {
+		robotDrive.arcadeDrive(moveStick, moveAxis, rotateStick, rotateAxis, squaredInputs);
+	}
+	
+	public void drive(double outputMagnitude, double curve) {
+        robotDrive.drive(outputMagnitude, curve);
+    }
+	
 	
 
     public void initDefaultCommand() {
@@ -43,5 +54,11 @@ public class DriveTrain extends Subsystem {
     	
     	
     }
+    
+    public void stop() {
+    	robotDrive.stopMotor();
+    }
+    
+    
 }
 

@@ -1,9 +1,7 @@
 package com.frc2879.eva;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
 
-import com.frc2879.eva.commands.ExampleCommand;
+import com.frc2879.eva.input.XboxController;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -38,11 +36,18 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
 	
 	
-	private final Joystick driveJoystick = new Joystick(RobotMap.DriveJoystick);
+	private final XboxController driveJoystick = new XboxController(RobotMap.DriveJoystick);
 	
-	public Joystick getDriveJoystick() {
+	public OI() {
+		
+		
+	}
+	
+	public XboxController getDriveJoystick() {
 		return driveJoystick;
 	}
+	
+	
 	
 }
 

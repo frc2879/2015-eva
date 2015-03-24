@@ -36,6 +36,8 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 
     Command autonomousCommand;
+    
+    Command arcadeDrive;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -44,7 +46,9 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
 		oi = new OI();
         // instantiate the command used for the autonomous period
-        autonomousCommand = new ExampleCommand();
+        autonomousCommand = new ExampleCommand(); 
+        
+        arcadeDrive = new ArcadeDrive();
     }
 	
 	public void disabledPeriodic() {
