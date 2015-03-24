@@ -22,8 +22,6 @@ public class ArcadeDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	//TODO test this thing
-    	//Robot.drivetrain.arcadeDrive(Robot.oi.getDriveJoystick(), false);
     	Robot.drivetrain.getRobotDrive().arcadeDrive(Robot.oi.getDriveJoystick(), false);
     }
 

@@ -38,6 +38,8 @@ public class Robot extends IterativeRobot {
     Command autonomousCommand;
     
     Command arcadeDrive;
+    
+    Command moveLift;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -49,6 +51,8 @@ public class Robot extends IterativeRobot {
         autonomousCommand = new ExampleCommand(); 
         
         arcadeDrive = new ArcadeDrive();
+        
+        moveLift = new MoveLift();
     }
 	
 	public void disabledPeriodic() {

@@ -40,7 +40,6 @@ public class OI {
 	
 	public OI() {
 		
-		
 	}
 	
 	public XboxController getDriveJoystick() {

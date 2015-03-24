@@ -4,6 +4,7 @@ import com.frc2879.eva.RobotMap;
 import com.frc2879.eva.commands.MoveLift;
 
 import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.CANTalon.ControlMode;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -22,17 +23,24 @@ public class Lift extends Subsystem {
 		motor1 = new CANTalon(RobotMap.CANDevices.LiftMotor1);
 		motor2 = new CANTalon(RobotMap.CANDevices.LiftMotor2);
 		
+		motor2.changeControlMode(ControlMode.Follower);
+		motor2.set(motor1.getDeviceID());
+		
 	}
 	
 	public void set(double outputValue) {
 		motor1.set(outputValue);
-		motor2.set(outputValue);
 	}
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     	setDefaultCommand(new MoveLift());
+    }
+    
+    public void stop() {
+    	motor1.stopMotor();
+    	motor2.stopMotor();
     }
 }
 

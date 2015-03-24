@@ -28,11 +28,12 @@ public class RobotMap {
 		//Eva is 1 for left and 2 for right.
 		//Bender is 5 and 6
 
-		public static final int leftDrive = 5;
-		public static final int rightDrive = 6;
+		public static final int leftDrive = 1;
+		public static final int rightDrive = 2;
 		
-		public static final int LiftMotor1 = 2;
-		public static final int LiftMotor2 = 3;
+		//Eva is 2 for motor1 and 3 for motor2
+		public static final int LiftMotor1 = 5;
+		public static final int LiftMotor2 = 6;
 	}
 	
 	public class Power {
