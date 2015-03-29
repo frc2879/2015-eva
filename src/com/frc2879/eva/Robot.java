@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import com.frc2879.eva.commands.*;
 import com.frc2879.eva.subsystems.*;
@@ -20,26 +21,23 @@ import com.frc2879.eva.subsystems.*;
 public class Robot extends IterativeRobot {
 	
 	public static final String name = "Eva";
-    public static final String version = "C.2015.002";
+    public static final String version = "C.2015.003";
     public static final String fullname = name + " " + version;
 	
 
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	public static ExampleSubsystem exampleSubsystem;
 	
 	
-	public static final PowerDistributionPanel pdBoard = new PowerDistributionPanel();
+	public static PowerDistributionPanel pdBoard;
 	
-	public static final DriveTrain drivetrain = new DriveTrain();
-	public static final Lift lift = new Lift();
-	public static final Arms arms = new Arms();
+	public static DriveTrain drivetrain;
+	public static Lift lift;
+	public static Arms arms;
+	public static Pneumatics pneumatics;
 	
 	public static OI oi;
 
     Command autonomousCommand;
-    
-    Command arcadeDrive;
-    
-    Command moveLift;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -47,12 +45,24 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
+		
+		// Initialize all subsystems
+		pdBoard = new PowerDistributionPanel();
+		drivetrain = new DriveTrain();
+		lift = new Lift();
+		arms = new Arms();
+		pneumatics = new Pneumatics();
+		
+		exampleSubsystem = new ExampleSubsystem();
+		
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand(); 
         
-        arcadeDrive = new ArcadeDrive();
-        
-        moveLift = new MoveLift();
+        // Show what command your subsystem is running on the SmartDashboard
+        SmartDashboard.putData(drivetrain);
+        SmartDashboard.putData(lift);
+        SmartDashboard.putData(arms);
+        SmartDashboard.putData(pneumatics);
     }
 	
 	public void disabledPeriodic() {

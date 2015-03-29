@@ -44,4 +44,9 @@ public class RobotMap {
 		public static final int LiftMotor2 = 3;
 	}
 	
+	public class Pneumatics {
+		
+		public static final int PCM = 11;
+	}
+	
 }
