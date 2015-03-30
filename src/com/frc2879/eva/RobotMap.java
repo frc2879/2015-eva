@@ -44,9 +44,12 @@ public class RobotMap {
 		public static final int LiftMotor2 = 3;
 	}
 	
-	public class Pneumatics {
+	public class PCM {
+		public static final int PCM_CAN = 11;
 		
-		public static final int PCM = 11;
+		public static final int BrakeSol = 1;
+		public static final int ArmsSolF = 2;
+		public static final int ArmsSolR = 3;
 	}
 	
 }

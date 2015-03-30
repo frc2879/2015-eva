@@ -16,8 +16,12 @@ public class Pneumatics extends Subsystem {
 	final Compressor compressor;
 	
 	public Pneumatics() {
-		compressor = new Compressor(RobotMap.Pneumatics.PCM);
+		compressor = new Compressor(RobotMap.PCM.PCM_CAN);
 		compressor.setClosedLoopControl(true);
+	}
+	
+	public Compressor getCompressor() {
+		return compressor;
 	}
 
     public void initDefaultCommand() {

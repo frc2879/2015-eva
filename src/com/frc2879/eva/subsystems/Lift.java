@@ -5,6 +5,7 @@ import com.frc2879.eva.commands.MoveLift;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.ControlMode;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -18,6 +19,8 @@ public class Lift extends Subsystem {
 	final CANTalon motor1;
 	final CANTalon motor2;
 	
+	Solenoid brakeSol;
+	
 	public Lift(){
 		
 		motor1 = new CANTalon(RobotMap.CANDevices.LiftMotor1);
@@ -26,11 +29,24 @@ public class Lift extends Subsystem {
 		motor2.changeControlMode(ControlMode.Follower);
 		motor2.set(motor1.getDeviceID());
 		
+		//TODO motorX.setVoltageRampRate(x); x represents 0 to x volts in 1 second
+		
+		brakeSol = new Solenoid(RobotMap.PCM.PCM_CAN, RobotMap.PCM.BrakeSol);
+		
+	}
+	
+	public void releaseBrake(){
+		brakeSol.set(false);
+	}
+	
+	public void engageBrake(){
+		brakeSol.set(true);
 	}
 	
 	public void set(double outputValue) {
 		motor1.set(outputValue);
 	}
+
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -41,6 +57,7 @@ public class Lift extends Subsystem {
     public void stop() {
     	motor1.stopMotor();
     	motor2.stopMotor();
+    	engageBrake();
     }
 }
 
