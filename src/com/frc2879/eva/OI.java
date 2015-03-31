@@ -1,6 +1,7 @@
 package com.frc2879.eva;
 
 
+import com.frc2879.eva.commands.MoveLift;
 import com.frc2879.eva.input.XboxController;
 
 /**
@@ -36,14 +37,15 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
 	
 	
-	private final XboxController DRIVE_JOYSTICK = new XboxController(RobotMap.DriveJoystick);
+	private final XboxController driveJoystick = new XboxController(RobotMap.DriveJoystick);
 	
 	public OI() {
-		
+		driveJoystick.lt.whenPressed(new MoveLift());
+		driveJoystick.rt.whenPressed(new MoveLift());
 	}
 	
 	public XboxController getDriveJoystick() {
-		return DRIVE_JOYSTICK;
+		return driveJoystick;
 	}
 	
 	
