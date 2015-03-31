@@ -40,6 +40,7 @@ public class OI {
 	private final XboxController driveJoystick = new XboxController(RobotMap.DriveJoystick);
 	
 	public OI() {
+		// Move the lift up and down when pressed
 		driveJoystick.lt.whenPressed(new MoveLift());
 		driveJoystick.rt.whenPressed(new MoveLift());
 	}

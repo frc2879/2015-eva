@@ -2,6 +2,7 @@ package com.frc2879.eva.subsystems;
 
 import com.frc2879.eva.RobotMap;
 import com.frc2879.eva.commands.ArcadeDrive;
+import com.frc2879.eva.input.XboxController;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -37,12 +38,42 @@ public class DriveTrain extends Subsystem {
 		robotDrive.setSafetyEnabled(false);
 	}
 	
+	// Takes in a XboxController and drives the robot
+	public void drive(XboxController controller) {
+		robotDrive.arcadeDrive(controller.leftStick.getY(), controller.leftStick.getX(), false);
+	}
+	
+	// Autonomous, drives the robot at the rate forward
+	// The rate is from 0 to 1.0
+	public void driveForward(double rate) {
+		// Keep from accidentally going backward
+		if (rate < 0) {
+			rate = 0;
+		}
+		
+		robotDrive.arcadeDrive(rate, 0, false);
+	}
+	
+	// Autonomous, drives the robot backwards
+	// The rate is from 0 to 1.0
+	public void driveBackward(double rate) {
+		// Keep from accidentally going forward
+		if (rate < 0) {
+			rate = 0;
+		}
+		
+		robotDrive.arcadeDrive(-rate, 0, false);
+	}
+	
+	// Autonomous, stops the drive train
+	public void stop() {
+		robotDrive.stopMotor();
+	}
+	
 	public RobotDrive getRobotDrive() {
 		return this.robotDrive;
 	}
 	
-	
-
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
@@ -50,11 +81,5 @@ public class DriveTrain extends Subsystem {
     	
     	
     }
-    
-    public void stop() {
-    	robotDrive.stopMotor();
-    }
-    
-    
 }
 
