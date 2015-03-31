@@ -16,7 +16,7 @@ public class Arms extends Subsystem {
 	DoubleSolenoid sol;
 	
 	public Arms() {
-		sol = new DoubleSolenoid(RobotMap.PCM.PCM_CAN, RobotMap.PCM.ArmsSolF, RobotMap.PCM.ArmsSolR);
+		sol = new DoubleSolenoid(RobotMap.PCM.PCM_CAN, RobotMap.PCM.ARMS_SOL_F, RobotMap.PCM.ARMS_SOL_R);
 	}
 	
 	public DoubleSolenoid getSol() {
