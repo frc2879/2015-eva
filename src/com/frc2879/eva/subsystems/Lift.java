@@ -23,15 +23,15 @@ public class Lift extends Subsystem {
 	
 	public Lift(){
 		
-		motor1 = new CANTalon(RobotMap.CANDevices.LiftMotor1);
-		motor2 = new CANTalon(RobotMap.CANDevices.LiftMotor2);
+		motor1 = new CANTalon(RobotMap.CANDevices.LIFT_MOTOR_1);
+		motor2 = new CANTalon(RobotMap.CANDevices.LIFT_MOTOR_2);
 		
 		motor2.changeControlMode(ControlMode.Follower);
 		motor2.set(motor1.getDeviceID());
 		
 		//TODO motorX.setVoltageRampRate(x); x represents 0 to x volts in 1 second
 		
-		brakeSol = new Solenoid(RobotMap.PCM.PCM_CAN, RobotMap.PCM.BrakeSol);
+		brakeSol = new Solenoid(RobotMap.PCM.PCM_CAN, RobotMap.PCM.BRAKE_SOL);
 		
 	}
 	
@@ -55,8 +55,9 @@ public class Lift extends Subsystem {
     }
     
     public void stop() {
-    	motor1.stopMotor();
-    	motor2.stopMotor();
+    	// motor1.stopMotor() depricated, switched to disableControl
+    	motor1.disableControl();
+    	motor2.disableControl();
     	engageBrake();
     }
 }

@@ -36,14 +36,14 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
 	
 	
-	private final XboxController driveJoystick = new XboxController(RobotMap.DriveJoystick);
+	private final XboxController DRIVE_JOYSTICK = new XboxController(RobotMap.DriveJoystick);
 	
 	public OI() {
 		
 	}
 	
 	public XboxController getDriveJoystick() {
-		return driveJoystick;
+		return DRIVE_JOYSTICK;
 	}
 	
 	

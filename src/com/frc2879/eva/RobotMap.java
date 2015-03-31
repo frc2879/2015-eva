@@ -28,28 +28,28 @@ public class RobotMap {
 		//Eva is 1 for left and 2 for right.
 		//Bender is 5 and 6
 
-		public static final int leftDrive = 1;
-		public static final int rightDrive = 2;
+		public static final int LEFT_DRIVE = 1;
+		public static final int RIGHT_DRIVE = 2;
 		
 		//Eva is 2 for motor1 and 3 for motor2
-		public static final int LiftMotor1 = 5;
-		public static final int LiftMotor2 = 6;
+		public static final int LIFT_MOTOR_1 = 5;
+		public static final int LIFT_MOTOR_2 = 6;
 	}
 	
 	public class Power {
-		public static final int LeftDrive = 0;
-		public static final int RightDrive = 1;
+		public static final int LEFT_DRIVE = 0;
+		public static final int RIGHT_DRIVE = 1;
 
-		public static final int LiftMotor1 = 2;
-		public static final int LiftMotor2 = 3;
+		public static final int LIFT_MOTOR_1 = 2;
+		public static final int LIFT_MOTOR_2 = 3;
 	}
 	
 	public class PCM {
 		public static final int PCM_CAN = 11;
 		
-		public static final int BrakeSol = 1;
-		public static final int ArmsSolF = 2;
-		public static final int ArmsSolR = 3;
+		public static final int BRAKE_SOL = 1;
+		public static final int ARMS_SOL_F = 2;
+		public static final int ARMS_SOL_R = 3;
 	}
 	
 }

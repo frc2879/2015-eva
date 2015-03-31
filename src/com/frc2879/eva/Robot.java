@@ -20,9 +20,9 @@ import com.frc2879.eva.subsystems.*;
  */
 public class Robot extends IterativeRobot {
 	
-	public static final String name = "Eva";
-    public static final String version = "C.2015.003";
-    public static final String fullname = name + " " + version;
+	public static final String NAME = "Eva";
+    public static final String VERSION = "C.2015.003";
+    public static final String FULLNAME = NAME + " " + VERSION;
 	
 
 	public static ExampleSubsystem exampleSubsystem;

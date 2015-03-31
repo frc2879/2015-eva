@@ -24,8 +24,8 @@ public class DriveTrain extends Subsystem {
 	
 	public DriveTrain(){
 		
-		leftTalon = new CANTalon(RobotMap.CANDevices.leftDrive);
-		rightTalon = new CANTalon(RobotMap.CANDevices.rightDrive);
+		leftTalon = new CANTalon(RobotMap.CANDevices.LEFT_DRIVE);
+		rightTalon = new CANTalon(RobotMap.CANDevices.RIGHT_DRIVE);
 		
 		leftTalon.changeControlMode(ControlMode.PercentVbus);
 		rightTalon.changeControlMode(ControlMode.PercentVbus);
