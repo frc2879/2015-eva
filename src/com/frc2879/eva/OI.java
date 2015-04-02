@@ -1,7 +1,7 @@
 package com.frc2879.eva;
 
 
-import com.frc2879.eva.commands.MoveLift;
+import com.frc2879.eva.commands.*;
 import com.frc2879.eva.input.XboxController;
 
 /**
@@ -43,6 +43,9 @@ public class OI {
 		// Move the lift up and down when pressed
 		driveJoystick.lt.whenPressed(new MoveLift());
 		driveJoystick.rt.whenPressed(new MoveLift());
+		
+		driveJoystick.rb.whenPressed(new ToggleArms());
+		
 	}
 	
 	public XboxController getDriveJoystick() {

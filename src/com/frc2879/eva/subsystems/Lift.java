@@ -36,11 +36,11 @@ public class Lift extends Subsystem {
 	}
 	
 	public void releaseBrake(){
-		brakeSol.set(false);
+		brakeSol.set(true);
 	}
 	
 	public void engageBrake(){
-		brakeSol.set(true);
+		brakeSol.set(false);
 	}
 	
 	public void set(double outputValue) {
@@ -51,7 +51,7 @@ public class Lift extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-    	setDefaultCommand(new MoveLift());
+    	//setDefaultCommand(new MoveLift());
     }
     
     public void stop() {

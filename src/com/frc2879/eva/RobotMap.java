@@ -48,8 +48,12 @@ public class RobotMap {
 		public static final int PCM_CAN = 11;
 		
 		public static final int BRAKE_SOL = 1;
-		public static final int ARMS_SOL_F = 2;
-		public static final int ARMS_SOL_R = 3;
+		
+		public static final int LEFT_ARM_SOL_F = 2;
+		public static final int LEFT_ARM_SOL_R = 3;
+		
+		public static final int RIGHT_ARM_SOL_F = 4;
+		public static final int RIGHT_ARM_SOL_R = 5;
 	}
 	
 }

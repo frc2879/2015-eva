@@ -21,7 +21,7 @@ import com.frc2879.eva.subsystems.*;
 public class Robot extends IterativeRobot {
 	
 	public static final String NAME = "Eva";
-    public static final String VERSION = "C.2015.003";
+    public static final String VERSION = "C.2015.004";
     public static final String FULLNAME = NAME + " " + VERSION;
 	
 
@@ -48,10 +48,10 @@ public class Robot extends IterativeRobot {
 		
 		// Initialize all subsystems
 		pdBoard = new PowerDistributionPanel();
+		pneumatics = new Pneumatics();
 		drivetrain = new DriveTrain();
 		lift = new Lift();
 		arms = new Arms();
-		pneumatics = new Pneumatics();
 		
 		exampleSubsystem = new ExampleSubsystem();
 		
