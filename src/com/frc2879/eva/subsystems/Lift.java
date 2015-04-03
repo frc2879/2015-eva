@@ -1,7 +1,6 @@
 package com.frc2879.eva.subsystems;
 
 import com.frc2879.eva.RobotMap;
-import com.frc2879.eva.commands.MoveLift;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.ControlMode;
@@ -31,6 +30,7 @@ public class Lift extends Subsystem {
 		
 		//TODO motorX.setVoltageRampRate(x); x represents 0 to x volts in 1 second
 		
+		
 		brakeSol = new Solenoid(RobotMap.PCM.PCM_CAN, RobotMap.PCM.BRAKE_SOL);
 		
 	}
@@ -43,8 +43,20 @@ public class Lift extends Subsystem {
 		brakeSol.set(false);
 	}
 	
+	public void setBrake(boolean e) {
+		brakeSol.set(e);
+	}
+	
 	public void set(double outputValue) {
 		motor1.set(outputValue);
+	}
+	
+	public boolean isFwdLimitSwitchClosed() {
+		return(motor1.isFwdLimitSwitchClosed());
+	}
+	
+	public boolean isRevLimitSwitchClosed() {
+		return(motor1.isRevLimitSwitchClosed());
 	}
 
 

@@ -21,7 +21,7 @@ import com.frc2879.eva.subsystems.*;
 public class Robot extends IterativeRobot {
 	
 	public static final String NAME = "Eva";
-    public static final String VERSION = "C.2015.004";
+    public static final String VERSION = "C.2015.005";
     public static final String FULLNAME = NAME + " " + VERSION;
 	
 
@@ -44,7 +44,6 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-		oi = new OI();
 		
 		// Initialize all subsystems
 		pdBoard = new PowerDistributionPanel();
@@ -54,6 +53,8 @@ public class Robot extends IterativeRobot {
 		arms = new Arms();
 		
 		exampleSubsystem = new ExampleSubsystem();
+		
+		oi = new OI();
 		
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand(); 

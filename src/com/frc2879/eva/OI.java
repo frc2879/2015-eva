@@ -40,11 +40,18 @@ public class OI {
 	private final XboxController driveJoystick = new XboxController(RobotMap.DriveJoystick);
 	
 	public OI() {
+		
+		driveJoystick.rt.setTriggerSensitivity(0.3);
+		driveJoystick.lt.setTriggerSensitivity(0.3);
+		
 		// Move the lift up and down when pressed
-		driveJoystick.lt.whenPressed(new MoveLift());
-		driveJoystick.rt.whenPressed(new MoveLift());
+		driveJoystick.rt.whenPressed(new MoveLiftUp());
+		driveJoystick.lt.whenPressed(new MoveLiftDown());
 		
 		driveJoystick.rb.whenPressed(new ToggleArms());
+		
+		//driveJoystick.x.whenPressed(new SetBrake(true));
+		//driveJoystick.b.whenPressed(new SetBrake(false));
 		
 	}
 	
