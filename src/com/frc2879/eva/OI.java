@@ -48,7 +48,10 @@ public class OI {
 		driveJoystick.rt.whenPressed(new MoveLiftUp());
 		driveJoystick.lt.whenPressed(new MoveLiftDown());
 		
-		driveJoystick.rb.whenPressed(new ToggleArms());
+		//driveJoystick.rb.whenPressed(new ToggleArms());
+		driveJoystick.rb.whenPressed(new GrabArms());
+		driveJoystick.lb.whenPressed(new ReleaseArms());
+		
 		
 		//driveJoystick.x.whenPressed(new SetBrake(true));
 		//driveJoystick.b.whenPressed(new SetBrake(false));

@@ -31,6 +31,9 @@ public class DriveTrain extends Subsystem {
 		leftTalon.changeControlMode(ControlMode.PercentVbus);
 		rightTalon.changeControlMode(ControlMode.PercentVbus);
 		
+		leftTalon.setVoltageRampRate(6);
+		rightTalon.setVoltageRampRate(6);
+		
 		//leftTalon.reverseOutput(false);
 		//rightTalon.reverseOutput(false);
 		
