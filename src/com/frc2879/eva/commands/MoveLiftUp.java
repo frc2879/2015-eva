@@ -26,6 +26,7 @@ public class MoveLiftUp extends Command {
     	double righttrigger = Robot.oi.getDriveJoystick().rt.getX();
 
     	Robot.lift.set((righttrigger) / 2);
+    	//Robot.lift.set(righttrigger);
     }
 
     // Make this return true when this Command no longer needs to run execute()

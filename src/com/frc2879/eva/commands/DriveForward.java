@@ -1,18 +1,21 @@
-
 package com.frc2879.eva.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-
 import com.frc2879.eva.Robot;
+
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class ExampleCommand extends Command {
+public class DriveForward extends Command {
+	
+	double rate;
 
-    public ExampleCommand() {
+    public DriveForward(double r) {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.exampleSubsystem);
+        // eg. requires(chassis);
+    	requires(Robot.drivetrain);
+    	rate = r;
     }
 
     // Called just before this Command runs the first time
@@ -21,11 +24,12 @@ public class ExampleCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.drivetrain.driveForward(rate);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

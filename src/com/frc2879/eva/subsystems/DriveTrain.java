@@ -31,8 +31,11 @@ public class DriveTrain extends Subsystem {
 		leftTalon.changeControlMode(ControlMode.PercentVbus);
 		rightTalon.changeControlMode(ControlMode.PercentVbus);
 		
-		leftTalon.setVoltageRampRate(6);
-		rightTalon.setVoltageRampRate(6);
+		leftTalon.setVoltageRampRate(12);
+		rightTalon.setVoltageRampRate(12);
+		
+		leftTalon.enableBrakeMode(true);
+		rightTalon.enableBrakeMode(true);
 		
 		//leftTalon.reverseOutput(false);
 		//rightTalon.reverseOutput(false);
@@ -49,7 +52,7 @@ public class DriveTrain extends Subsystem {
 	
 	// Takes in a XboxController and drives the robot
 	public void drive(XboxController controller) {
-		robotDrive.arcadeDrive(controller, false);
+		robotDrive.arcadeDrive(-controller.leftStick.getY(),controller.rightStick.getX() , false);
 	}
 	
 	// Autonomous, drives the robot at the rate forward
@@ -60,7 +63,7 @@ public class DriveTrain extends Subsystem {
 			rate = 0;
 		}
 		
-		robotDrive.arcadeDrive(rate, 0, false);
+		robotDrive.arcadeDrive(-rate, 0, false);
 	}
 	
 	// Autonomous, drives the robot backwards
@@ -71,7 +74,7 @@ public class DriveTrain extends Subsystem {
 			rate = 0;
 		}
 		
-		robotDrive.arcadeDrive(-rate, 0, false);
+		robotDrive.arcadeDrive(rate, 0, false);
 	}
 	
 	// Autonomous, stops the drive train

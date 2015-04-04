@@ -29,9 +29,11 @@ public class Lift extends Subsystem {
 		//motor1.enableBrakeMode(true);
 		//motor2.enableBrakeMode(true);
 		
-		//motor1.changeControlMode(ControlMode.Speed);
-		
 		motor1.setFeedbackDevice(FeedbackDevice.QuadEncoder);
+		motor1.reverseSensor(true);
+		
+		//motor1.changeControlMode(ControlMode.Speed);
+		motor1.changeControlMode(ControlMode.PercentVbus);
 		
 		
 		motor2.changeControlMode(ControlMode.Follower);
@@ -58,6 +60,9 @@ public class Lift extends Subsystem {
 	
 	public void set(double outputValue) {
 		motor1.set(outputValue);
+		
+		System.out.println("position " + motor1.getPosition());
+		System.out.println("speed " + motor1.getSpeed());
 	}
 	
 	public boolean isFwdLimitSwitchClosed() {

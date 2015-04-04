@@ -54,12 +54,12 @@ public class Arms extends Subsystem {
 	}
 	
 	public void grab() {
-		bothForward();
+		bothReverse();
 		grabbed = true;
 	}
 	
 	public void release() {
-		bothReverse();
+		bothForward();
 		grabbed = false;
 	}
 	
