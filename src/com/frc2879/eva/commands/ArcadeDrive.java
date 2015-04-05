@@ -1,6 +1,7 @@
 package com.frc2879.eva.commands;
 
 import com.frc2879.eva.Robot;
+import com.frc2879.eva.input.XboxController;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -22,7 +23,7 @@ public class ArcadeDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivetrain.drive(Robot.oi.getDriveJoystick());
+    	Robot.drivetrain.arcadedrive(Robot.oi.getDriveJoystick().leftStick.getY(),Robot.oi.getDriveJoystick().leftStick.getX(), false);
     }
 
     // Make this return true when this Command no longer needs to run execute()

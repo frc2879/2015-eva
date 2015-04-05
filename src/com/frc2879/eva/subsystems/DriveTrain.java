@@ -51,8 +51,12 @@ public class DriveTrain extends Subsystem {
 	}
 	
 	// Takes in a XboxController and drives the robot
-	public void drive(XboxController controller) {
-		robotDrive.arcadeDrive(-controller.leftStick.getY(),controller.rightStick.getX() , false);
+	public void arcadedrive(double  move, double rotate, boolean squaredInputs) {
+		robotDrive.arcadeDrive(-move, rotate, squaredInputs);
+	}
+	
+	public void arcadedrive(XboxController controller, boolean squaredInputs) {
+		robotDrive.arcadeDrive(controller, squaredInputs);
 	}
 	
 	// Autonomous, drives the robot at the rate forward
